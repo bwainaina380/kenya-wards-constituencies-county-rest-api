@@ -1,10 +1,14 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 // Import router from api.js
 const routes = require('./routes/api.js');
 
 // Initialize express app
 const app = express();
+
+// Create bodyParser middleware at the top of the stack so that data in request bosy is ready for the routes
+app.use(bodyParser.json());
 
 // Create middleware to handle routes
 app.use('/api', routes);

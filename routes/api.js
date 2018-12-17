@@ -10,7 +10,10 @@ router.get('/wards', (req, res) => {
 
 // Route to handle POST request
 router.post('/wards', (req, res) => {
-    res.send({type: "POST"});
+    res.send({
+        name: req.body.name,
+        county: req.body.county
+    })
 });
 
 // Route to handle PUT requests

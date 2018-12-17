@@ -1,0 +1,29 @@
+{
+  "name": "kenya-wards-rest-api",
+  "version": "1.0.0",
+  "description": "This is an API that will give users ward names all across Kenya",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bwainaina380/kenya-wards-constituencies-county-rest-api.git"
+  },
+  "keywords": [
+    "REST",
+    "API",
+    "Kenya",
+    "wards",
+    "Express",
+    "Node",
+    "Mongodb",
+    "Reactjs"
+  ],
+  "author": "Brian Menye Wainaina",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bwainaina380/kenya-wards-constituencies-county-rest-api/issues"
+  },
+  "homepage": "https://github.com/bwainaina380/kenya-wards-constituencies-county-rest-api#readme"
+}

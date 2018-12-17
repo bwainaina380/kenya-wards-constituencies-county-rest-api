@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/bwainaina380/kenya-wards-constituencies-county-rest-api#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.4"
   },
   "devDependencies": {

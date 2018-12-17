@@ -4,7 +4,8 @@
   "description": "This is an API that will give users ward names all across Kenya",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",

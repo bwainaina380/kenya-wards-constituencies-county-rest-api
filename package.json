@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/bwainaina380/kenya-wards-constituencies-county-rest-api/issues"
   },
-  "homepage": "https://github.com/bwainaina380/kenya-wards-constituencies-county-rest-api#readme"
+  "homepage": "https://github.com/bwainaina380/kenya-wards-constituencies-county-rest-api#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }

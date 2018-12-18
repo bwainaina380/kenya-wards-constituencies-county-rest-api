@@ -6,7 +6,9 @@ const router = express.Router();
 
 // Route to handle GET request
 router.get('/wards', (req, res, next) => {
-    res.send({type: "GET"});
+    wardModel.find({county:req.query.county, constituency:req.query.constituency}).then((ward) => {
+        res.send(ward);
+    })
 });
 
 // Route to handle POST request

@@ -5,12 +5,12 @@ const wardModel = require('../models/wardModel');
 const router = express.Router();
 
 // Route to handle GET request
-router.get('/wards', (req, res) => {
+router.get('/wards', (req, res, next) => {
     res.send({type: "GET"});
 });
 
 // Route to handle POST request
-router.post('/wards', (req, res) => {
+router.post('/wards', (req, res, next) => {
     var ward = new wardModel(req.body);
     ward.save().then((ward) => {
         res.send(ward);
@@ -18,12 +18,12 @@ router.post('/wards', (req, res) => {
 });
 
 // Route to handle PUT requests
-router.put('/wards/:id', (req, res) => {
+router.put('/wards/:id', (req, res, next) => {
     res.send({type: "PUT"});
 });
 
 // Route to handle DELETE requests
-router.delete('/wards/:id', (req, res) => {
+router.delete('/wards/:id', (req, res, next) => {
     res.send({type: "DELETE"});
 });
 

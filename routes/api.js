@@ -19,7 +19,11 @@ router.post('/wards', (req, res, next) => {
 
 // Route to handle PUT requests
 router.put('/wards/:id', (req, res, next) => {
-    res.send({type: "PUT"});
+    wardModel.findByIdAndUpdate({_id: req.params.id}, req.body).then(() => {
+        wardModel.findOne({_id:req.params.id}).then((ward) => {
+            res.send(ward)
+        })
+    })
 });
 
 // Route to handle DELETE requests

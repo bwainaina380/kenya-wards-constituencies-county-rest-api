@@ -24,7 +24,9 @@ router.put('/wards/:id', (req, res, next) => {
 
 // Route to handle DELETE requests
 router.delete('/wards/:id', (req, res, next) => {
-    res.send({type: "DELETE"});
+    wardModel.findByIdAndRemove({_id:req.params.id}).then((ward) => {
+        res.send(ward);
+    })
 });
 
 // Export router

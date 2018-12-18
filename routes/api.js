@@ -14,7 +14,7 @@ router.post('/wards', (req, res, next) => {
     var ward = new wardModel(req.body);
     ward.save().then((ward) => {
         res.send(ward);
-    });
+    }).catch(next);
 });
 
 // Route to handle PUT requests

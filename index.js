@@ -14,6 +14,11 @@ const routes = require('./routes/api.js');
 // Initialize express app
 const app = express();
 
+// Create custom middleware to handle errors
+app.use((err, req, res, next) => {
+    res.status(403).send({error: err.message});
+});
+
 // Create bodyParser middleware at the top of the stack so that data in request bosy is ready for the routes
 app.use(bodyParser.json());
 

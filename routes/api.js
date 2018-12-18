@@ -1,4 +1,5 @@
 const express = require('express');
+const wardModel = require('../models/wardModel');
 
 // Initialize router
 const router = express.Router();
@@ -10,10 +11,10 @@ router.get('/wards', (req, res) => {
 
 // Route to handle POST request
 router.post('/wards', (req, res) => {
-    res.send({
-        name: req.body.name,
-        county: req.body.county
-    })
+    var ward = new wardModel(req.body);
+    ward.save().then((ward) => {
+        res.send(ward);
+    });
 });
 
 // Route to handle PUT requests

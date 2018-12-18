@@ -1,5 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
+// Connect to MongoDB
+mongoose.connect('mongodb://localhost/warddb');
+
+// Set Mongoose Promise equal to global Promise as Mongoose's Promise is depracated
+mongoose.Promise = global.Promise;
 
 // Import router from api.js
 const routes = require('./routes/api.js');

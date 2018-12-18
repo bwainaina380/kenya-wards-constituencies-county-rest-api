@@ -6,7 +6,7 @@ const router = express.Router();
 
 // Route to handle GET request
 router.get('/wards', (req, res, next) => {
-    wardModel.find({county:req.query.county, constituency:req.query.constituency}).then((ward) => {
+    wardModel.find({county:req.query.county}).then((ward) => {
         res.send(ward);
     })
 });

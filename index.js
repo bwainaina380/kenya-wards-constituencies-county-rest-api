@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost/warddb');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/warddb');
 
 // Set Mongoose Promise equal to global Promise as Mongoose's Promise is depracated
 mongoose.Promise = global.Promise;

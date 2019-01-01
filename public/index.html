@@ -17,62 +17,186 @@
     <!-- Header -->
     <header>
       <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="/">Wards API</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+        <div class="row">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light col-md-8">
+            <a class="navbar-brand" href="/">Wards API</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#"
-                  >Home <span class="sr-only">(current)</span></a
-                >
-              </li>
-              <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-            </ul>
-          </div>
-        </nav>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#"
+                    >Home <span class="sr-only">(current)</span></a
+                  >
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
       </div>
     </header>
     <!-- Header -->
 
     <div class="container">
       <div class="row">
-        <img src="./images/kenya.png" alt="" class="img-fluid" /> <br />
-        <div class="col-md-12"><h1>Kenya Electoral Wards API</h1></div>
+        <div class="col-md-8">
+          <img src="./images/kenya.png" alt="" class="img-fluid" /> <br />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <h1>Kenya Electoral Wards API</h1>
 
-        <h2>Introduction</h2>
-        <p>
-          The Kenya Electoral Wards API provides the user with the names of all
-          the wards in a particular county or counties based on the URL
-          parameters provides. With this payload, the user can choose the data
-          they want to consume in their app/website.
-        </p>
+          <h2>Introduction</h2>
+          <p>
+            The Kenya Electoral Wards API provides the user with the names of
+            all the wards in a particular county or counties based on the URL
+            parameters provides. With this payload, the user can choose the data
+            they want to consume in their app/website.
+          </p>
 
-        <p>
-          Kenya has 47 counties. Each county is divided into constituencies and
-          each constituency is divided into wards. As such, wards are the
-          smallest electoral divisions in the country and closest the citizens
-          can get government services.
-        </p>
+          <p>
+            Kenya has 47 counties. Each county is divided into constituencies
+            and each constituency is divided into wards. As such, wards are the
+            smallest electoral divisions in the country and closest the citizens
+            can get government services.
+          </p>
 
-        <p>
-          The code for this API can be found on
-          <a
-            href="https://github.com/bwainaina380/kenya-wards-constituencies-county-rest-api"
-            >GitHub</a
-          >
-        </p>
+          <p>
+            The code for this API can be found on
+            <a
+              href="https://github.com/bwainaina380/kenya-wards-constituencies-county-rest-api"
+              >GitHub</a
+            >
+          </p>
+
+          <p>
+            For any questions, please feel free to contact me at: Email:
+            bwainaina380@gmail.com Twitter: @bwainaina380
+          </p>
+
+          <h2>Overview</h2>
+          <p>
+            The most important thing you need to know as a developer is the
+            syntax I've used when adding the names of the counties to the
+            database. If you do not write the names exactly as in the following
+            list, you will get an empty response.
+          </p>
+
+          <p>
+            Make sure you follow the capitalizations and dashes that I've used
+            to the letter.
+          </p>
+
+          <p>
+            <span class="text-uppercase">very important</span>: There are
+            counties with 2 names. Examples are "West Pokot", "Homa Bay" and
+            "Uasin Gishu". When performing a GET request on such counties, you
+            need to separate the two names with a "+".
+          </p>
+          <p>Example:</p>
+          <code> /api/wards?county=West+Pokot /api/wards?county=Homa+Bay </code>
+          <br />
+          <code> /api/wards?county=Uasin+Gishu </code> <br />
+
+          <h2>Authentication</h2>
+          <p>
+            There is no authentication required to use this API. I will keep an
+            eye on the number of requests to the API, and if it hits 10000
+            requests per month, I will enable authorization.
+          </p>
+          <p>
+            This will help me know who is using the API and for what purpose.
+          </p>
+
+          <h2>Error Codes</h2>
+          <p>
+            402 - You will get this error when you try to perform a POST request
+            without providing one or all of the following in the request body:
+          </p>
+
+          <ol>
+            <li>Ward name</li>
+            <li>Constituency name</li>
+            <li>County Name</li>
+          </ol>
+
+          <p>
+            In all other cases, you will get an empty response, showing that you
+            have entered a county that does not exist in Kenya, or you have a
+            typo in the request parameter.
+          </p>
+
+          <h2>Rate limit</h2>
+          <p>
+            As of this writing, I have not imposed any rate limit on the use of
+            this API.
+          </p>
+
+          <h3>
+            <span class="text-info">GET</span>
+            https://frozen-basin-45055.herokuapp.com/api/wards?county=Nairobi
+          </h3>
+
+          <p>
+            This returns the names of all the wards in "Nairobi" county. You can
+            replace "countyName" with the name of any of the 47 counties in the
+            country.
+          </p>
+
+          <h3>
+            <span class="text-info">GET</span>
+            https://frozen-basin-45055.herokuapp.com/api/wards?county=Nairobi&county=Mombasa
+          </h3>
+          <p>
+            This returns the names of all the wards in Nairobi and Mombasa
+            counties. You can replace "Nairobi" or "Mombasa" with the name of
+            any of the 47 counties in the country. You can display more
+            counties. Just separate them with "&" as shown in this request URL
+            example.
+          </p>
+
+          <h3>
+            <span class="text-info">POST</span
+            >https://frozen-basin-45055.herokuapp.com/api/wards
+          </h3>
+          <p>
+            This adds a new ward to the wards database. You need to provide the
+            name of the ward on the "name" property, the name of the
+            constituency on the "constituency" property and the name of the
+            county on the "county" property.
+          </p>
+
+          <h3>
+            <span class="text-info">PUT</span>
+            https://frozen-basin-45055.herokuapp.com/api/wards/:id
+          </h3>
+
+          <p>
+            This updates data about the ward whose id is specified in the "id"
+            request parameter.
+          </p>
+
+          <h3>
+            <span class="text-danger">DELETE</span>
+            https://frozen-basin-45055.herokuapp.com/api/wards/:id
+          </h3>
+          <p>
+            This deletes the ward whose id is specified in the "id" request
+            parameter.
+          </p>
+        </div>
       </div>
     </div>
   </body>
